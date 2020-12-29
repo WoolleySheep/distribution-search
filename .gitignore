@@ -1,1 +1,3 @@
 .venv
+distribution_search/__pycache__
+tests/__pycache__
