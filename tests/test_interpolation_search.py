@@ -11,14 +11,16 @@ class TestInterpolationSearch(unittest.TestCase):
 
     # Returns correct index
     def test_randomised_lists(self):
-        random.seed(100)    # Generate the same random numbers every time
-        for _ in range(100):    # Conduct 100 tests
+        random.seed(100)  # Generate the same random numbers every time
+        for _ in range(100):  # Conduct 100 tests
             len_list = random.randint(1, 100)
             array = [random.randint(-100, 100) for _ in range(len_list)]
             array.sort()
             element = random.choice(array)
             with self.subTest(array=array, element=element):
-                self.assertEqual(interpolation_search(array, element), array.index(element))
+                self.assertEqual(
+                    interpolation_search(array, element), array.index(element)
+                )
 
     def test_element_at_middle_index(self):
         array = [1, 2, 3, 4]
