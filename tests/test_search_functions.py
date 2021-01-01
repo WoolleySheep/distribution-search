@@ -43,7 +43,7 @@ def _raise_value_error_for_all_search_functions(self, array, element):
 class TestInterpolationSearch(unittest.TestCase):
     def test_randomised_lists(self):
         random.seed(100)  # Generate the same random numbers every time
-        for _ in range(100):  # Conduct 100 tests
+        for _ in range(1000):  # Conduct 1000 tests
             len_list = random.randint(1, 100)
             array = [random.randint(-100, 100) for _ in range(len_list)]
             array.sort()
