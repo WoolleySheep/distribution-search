@@ -13,7 +13,7 @@ def _interpolation_search_recursive(array: list, element, min_idx: int, max_idx:
     if min_idx > max_idx or element < (min_value := array[min_idx]) or element > (max_value := array[max_idx]):
         raise ValueError(f"'{element}' is not in list")
 
-    interpol_idx = _interpolate_index(element, min_idx, max_idx, array[min_idx], array[max_idx])
+    interpol_idx = _interpolate_index(element, min_idx, max_idx, min_value, max_value)
     interpol_val = array[interpol_idx]
 
     if element == interpol_val:
