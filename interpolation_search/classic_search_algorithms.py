@@ -1,3 +1,5 @@
+from interpolation_search import _first_occurance_binary_method
+
 # Unsorted methods
 
 
@@ -32,23 +34,39 @@ def jump_search(array: list, element, jump_len: int) -> int:
     raise ValueError(f"'{element}' is not in list")
 
 
-def binary_search_recursive(array: list, element, start: int, end: int) -> int:
+def _binary_search_recursive(array: list, element, start: int, end: int) -> int:
     """Code ripped from https://stackabuse.com/binary-search-in-python/"""
 
     if start > end:
         raise ValueError(f"'{element}' is not in list")
 
     mid = (start + end) // 2
-    if element == (mid_value := array[mid]):
+    if (mid_value := array[mid]) == element:
         # TODO: Implement multiple occurance code
-        return mid
+        return _first_occurance_binary_method(array, start, mid)
 
     if element < mid_value:
-        return binary_search_recursive(array, element, start, mid - 1)
+        return _binary_search_recursive(array, element, start, mid - 1)
     else:
-        return binary_search_recursive(array, element, mid + 1, end)
+        return _binary_search_recursive(array, element, mid + 1, end)
 
 
 def binary_search(array: list, element) -> int:
 
-    return binary_search_recursive(array, element, 0, len(array))
+    return _binary_search_recursive(array, element, 0, len(array))
+
+
+def exponential_search(array: list, element) -> int:
+    """Code ripped from https://www.geeksforgeeks.org/exponential-search/?ref=lbp"""
+
+    if array[0] == element:
+        return 0
+
+    last_idx = len(array) - 1
+    block_end = 1
+    while block_end <= last_idx and array[block_end] < element:
+        block_end *= 2
+
+    return _binary_search_recursive(
+        array, element, block_end // 2, min(last_idx, block_end)
+    )
