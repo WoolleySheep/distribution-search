@@ -1,44 +1,36 @@
 from scipy.stats import chisquare
 
 
-def check_array_uniformity(array: list):
+def is_array_uniform(array: list, alpha: float = 0.05):
     """Use the Chi-square statistical test to determine how uniformly
     the elements in a list are distributed
     """
 
-    nsegments = len(x)
+    nsegments = len(array)
     min = x[0]
     max = x[-1]
     segment_size = (max - min) / nsegments
-    uniform_nelements_per_segment = len(x) / nsegments
 
     elements_per_segment = [0] * nsegments
 
     for element in x[:-1]:
-        current_segment = (element - min) // segment_size
+        current_segment = int((element - min) / segment_size)
         elements_per_segment[current_segment] += 1
+    
+    print(elements_per_segment)
 
     elements_per_segment[-1] += 1
 
-    other_unfiformity_index = chisquare(elements_per_segment)
-    other_other_unif = chisquare(
-        elements_per_segment,
-        [uniform_nelements_per_segment] * len(elements_per_segment),
-    )
-    print(other_unfiformity_index, other_other_unif)
+    chi_squared_result = chisquare(elements_per_segment)
+    print(chi_squared_result)
 
-    uniformity_index = sum(
-        [
-            ((nelements - uniform_nelements_per_segment) ** 2)
-            / uniform_nelements_per_segment
-            for nelements in elements_per_segment
-        ]
-    )
-
-    print(
-        f"segment size: {segment_size}, uniformity index: {uniformity_index}, index 2: {other_unfiformity_index}"
-    )
+    if chi_squared_result.pvalue > 1 - alpha:
+        return True
+    
+    return False
 
 
-x = list(range(1000))
-check_array_uniformity(x)
+
+
+x = [1, 2, 3, 4, 5, 6, 7, 7]
+print(is_array_uniform(x))
