@@ -49,7 +49,7 @@ def _first_occurance_binary_method(array, min_idx, match_idx):
 
 
 def _binary_search_recursive(array: list, element, start: int, end: int) -> int:
-    """Code ripped from https://stackabuse.com/binary-search-in-python/"""
+    """Code based on https://stackabuse.com/binary-search-in-python/"""
 
     if start > end:
         raise ValueError(f"'{element}' is not in list")
@@ -73,7 +73,7 @@ def binary_search(array: list, element) -> int:
 
 
 def exponential_search(array: list, element) -> int:
-    """Code ripped from https://www.geeksforgeeks.org/exponential-search/?ref=lbp"""
+    """Code based on https://www.geeksforgeeks.org/exponential-search/?ref=lbp"""
 
     if not array:
         raise ValueError(f"'{element}' is not in list")
@@ -89,6 +89,45 @@ def exponential_search(array: list, element) -> int:
     return _binary_search_recursive(
         array, element, block_end // 2, min(last_idx, block_end)
     )
+
+
+def fibonacci_search(array: list, element) -> int:
+    """Code based on https://www.geeksforgeeks.org/fibonacci-search/"""
+
+    if not array:
+        raise ValueError(f"'{element}' is not in list")
+
+    fib1 = 0
+    fib2 = 1
+    fib3 = fib1 + fib2
+
+    while fib3 < len(array):
+        fib1 = fib2
+        fib2 = fib3
+        fib3 = fib1 + fib2
+
+    block_start = 0
+
+    while fib3 > 1:
+        fib_idx = min(block_start + fib1, len(array) - 1)
+        if array[fib_idx] == element:
+            return _first_occurance_binary_method(array, block_start, fib_idx)
+
+        if array[fib_idx] < element:
+            block_start = fib_idx
+            fib3 = fib2
+            fib2 = fib1
+            fib1 = fib3 - fib2
+
+        else:
+            fib3 = fib1
+            fib2 = fib2 - fib1
+            fib1 = fib3 - fib2
+
+    if array[block_start] == element:
+        return block_start
+
+    raise ValueError(f"'{element}' is not in list")
 
 
 def _interpolate_index(element, min_idx, max_idx, min_value, max_value):
