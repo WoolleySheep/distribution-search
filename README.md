@@ -1,5 +1,8 @@
 # Search functions
 ## Python implementations of common list-search algorithms
+### TODO
+* Add docstrings and improve commenting
+* Convert into a package
 
 ### Algorithms implemented
 * **Unsorted lists:**
