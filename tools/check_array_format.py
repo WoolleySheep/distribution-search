@@ -3,6 +3,42 @@ from scipy.stats import chisquare, kstest
 from tabulate import tabulate
 
 
+def is_array_correct_format(
+    array: list, array_type=list, element_type=int, check_uniformity=False, kwargs={}
+) -> bool:
+
+    if type(array) is not array_type:
+        print(f"Type of array is {type(array)}; should be {array_type}")
+        return False
+
+    if not are_all_elements_same_type(array, element_type):
+        print(f"Not all elements of the array are of type {element_type}")
+        return False
+
+    if not is_array_sorted(array):
+        print("Array is not sorted")
+        return False
+
+    if check_uniformity and not is_array_uniform(array, **kwargs):
+        print("Array elements are not uniformly distributed")
+        return False
+
+    return True
+
+
+def is_array_sorted(array: list) -> bool:
+
+    if len(array) == 0 or len(array) == 1:
+        return True
+
+    return all(array[idx] <= array[idx + 1] for idx in range(len(array) - 1))
+
+
+def are_all_elements_same_type(array: list, element_type) -> bool:
+
+    return all([type(el) is element_type for el in array])
+
+
 def is_array_uniform(
     array: list,
     alpha: float = 0.05,
