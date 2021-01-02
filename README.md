@@ -12,10 +12,10 @@
   * Interpolation search
   
 ### Repository structure
-* **search_functions**: Search algorithm implementation files
-  * *search_functions.py*: Search algorithm implementation code
+* **list_search_functions**: Search algorithm implementation files
+  * *list_search_functions.py*: Search algorithm implementation code
 * **tests**: Test files
-  * *test_search_functions.py*: Unittests for search_functions.py
+  * *test__listsearch_functions.py*: Unittests for list_search_functions.py
 * **tools**: Files to assist with algorithm analysis and use
   * *check_array_format.py*: Functions for testing whether an object can be searched
   * *compare_runtimes.py*: Script comparing algorithm runtime over various length lists

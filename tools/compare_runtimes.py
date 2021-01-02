@@ -6,7 +6,7 @@ import random
 import time
 
 
-from search_functions.search_functions import (
+from list_search_functions.list_search_functions import (
     binary_search,
     exponential_search,
     interpolation_search,

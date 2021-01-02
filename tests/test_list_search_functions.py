@@ -1,10 +1,7 @@
-# Author: Matthew Woolley
-# Email: matt.wool@live.com.au
-
 import random
 import unittest
 
-from search_functions.search_functions import (
+from list_search_functions.list_search_functions import (
     linear_search,
     jump_search,
     binary_search,
