@@ -2,7 +2,6 @@
 # given various list lengths
 
 import matplotlib.pyplot as plt
-from pprint import pprint
 import random
 import time
 
@@ -36,15 +35,12 @@ for array_len in array_lengths:
         func_runtimes.append(time.time_ns() - start_time)
 
 for func, func_runtimes in zip(SEARCH_FUNCS, search_func_runtimes):
-    plt.plot(array_lengths, func_runtimes, label = func.__name__, marker='o')
+    plt.plot(array_lengths, func_runtimes, label=func.__name__, marker="o")
 
 plt.title("Runtime comparison of search algorithms")
-plt.xlabel('Array length')
-plt.ylabel('Runtime (ns)')
-plt.xscale('log')
+plt.xlabel("Array length")
+plt.ylabel("Runtime (ns)")
+plt.xscale("log")
 plt.ylim(bottom=0.0)
 plt.legend()
 plt.show()
-
-
-
