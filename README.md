@@ -2,6 +2,7 @@
 ## Python implementations of common list-search algorithms
 ### TODO
 * Add docstrings and improve commenting
+* Add signature
 * Convert into a package
 
 ### Algorithms implemented
