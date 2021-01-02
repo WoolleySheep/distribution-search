@@ -22,7 +22,7 @@
 
 ### Setup & Requirements
 * Have Python 3.8.2+ installed, as well as pip
-* Clone the repository using `<git clone https://github.com/WoolleySheep/search-functions.git>`
+* Clone the repository using `git clone https://github.com/WoolleySheep/search-functions.git`
 * To use just the search functions, no additional modules need to be installed
-* To use the tools, install the relevant packages using `<pip install -r requirements.txt>`
-* To run tests and utilise code styling, install the relevant packages using `<pip install -r requirements-dev.txt>`
+* To use the tools, install the relevant packages using `pip install -r requirements.txt`
+* To run tests and utilise code styling, install the relevant packages using `pip install -r requirements-dev.txt`
