@@ -2,7 +2,6 @@
 # given various list lengths
 
 import matplotlib.pyplot as plt
-from pprint import pprint
 import random
 import time
 
