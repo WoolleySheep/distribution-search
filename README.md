@@ -12,6 +12,7 @@
   * Binary search
   * Jump search
   * Exponential search
+  * Fibonacci search
 * **Uniformly-distributed sorted lists:**
   * Interpolation search
   

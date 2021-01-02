@@ -9,12 +9,14 @@ import time
 from list_search_functions.list_search_functions import (
     binary_search,
     exponential_search,
+    fibonacci_search,
     interpolation_search,
 )
 
 SEARCH_FUNCS = [
     binary_search,
     exponential_search,
+    fibonacci_search,
     interpolation_search,
 ]
 

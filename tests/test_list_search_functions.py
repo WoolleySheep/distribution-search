@@ -6,6 +6,7 @@ from list_search_functions.list_search_functions import (
     jump_search,
     binary_search,
     exponential_search,
+    fibonacci_search,
     interpolation_search,
 )
 
@@ -14,6 +15,7 @@ SEARCH_FUNCS = [
     jump_search,
     binary_search,
     exponential_search,
+    fibonacci_search,
     interpolation_search,
 ]
 
