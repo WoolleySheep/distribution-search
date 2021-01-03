@@ -1,6 +1,7 @@
 # Search functions
 ## Python implementations of common list-search algorithms
 ### TODO
+* Determine if rounding would be more effective
 * Add docstrings and improve commenting
 * Add signature
 * Convert into a package
