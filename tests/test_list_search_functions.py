@@ -50,7 +50,7 @@ def _raise_value_error_for_all_search_functions(self, array, element):
             self.assertRaises(ValueError, search_func, *args)
 
 
-class TestInterpolationSearch(unittest.TestCase):
+class TestSearchFunctions(unittest.TestCase):
     def test_randomised_lists(self):
         """Generate randomised lists to search"""
         random.seed(100)  # Generate the same random numbers every time

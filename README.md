@@ -18,7 +18,8 @@
 * **list_search_functions**: Search algorithm implementation files
   * *list_search_functions.py*: A collection of list-searching functions, utilising various algorithms
 * **tests**: Test files
-  * *test__listsearch_functions.py*: Unittests for list-searching functions
+  * *test_list_search_functions.py*: Unittests for list-searching functions
+  * *test_check_Array_format.py*: Unittests for array verification functions
 * **tools**: Files to assist with algorithm analysis and use
   * *check_array_format.py*: Functions for testing whether an object can be searched
   * *compare_runtimes.py*: Script comparing algorithm runtime over various length lists

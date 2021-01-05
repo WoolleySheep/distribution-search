@@ -1,4 +1,6 @@
 .venv
 venv
-tests/__pycache__
+
 list_search_functions/__pycache__
+tests/__pycache__
+tools/__pycache__

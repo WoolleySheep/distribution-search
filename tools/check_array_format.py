@@ -16,7 +16,7 @@ def is_array_correct_format(
     array: list, array_type=list, element_type=int, check_uniformity=False, kwargs={}
 ) -> bool:
 
-    if type(array) is not array_type:
+    if is_array_correct_type(array, array_type):
         print(f"Type of array is {type(array)}; should be {array_type}")
         return False
 
@@ -33,6 +33,10 @@ def is_array_correct_format(
         return False
 
     return True
+
+def is_array_correct_type(array: list, array_type) -> bool:
+
+    return type(array) is array_type
 
 
 def is_array_sorted(array: list) -> bool:
@@ -60,6 +64,9 @@ def is_array_uniform(
     how closely the array matches a uniform distribution.  Test p-value
     must be > 1 - alpha (aka: less than an x% chance of not being uniform).
     """
+
+    if alpha < 0 or alpha > 1:
+        raise ValueError(f"Alpha must be within [0, 1]; currently {alpha}")
 
     nsegments = len(array)
 
@@ -94,7 +101,4 @@ def is_array_uniform(
     if show_plot:
         plt.show()
 
-    if chi_squared_pass and kstest_pass:
-        return True
-
-    return False
+    return chi_squared_pass and kstest_pass
