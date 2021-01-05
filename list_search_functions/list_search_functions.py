@@ -137,7 +137,7 @@ def _interpolate_index(element, min_idx, max_idx, min_value, max_value):
 
     normalised_interpolated_value = (element - min_value) / value_range
     delta_idx = max_idx - min_idx
-    return int(normalised_interpolated_value * delta_idx) + min_idx
+    return int(round(normalised_interpolated_value * delta_idx)) + min_idx
 
 
 def _interpolation_search_recursive(
