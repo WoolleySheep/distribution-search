@@ -1,5 +1,11 @@
-# Test the relative runtimes of different search algorithms
-# given various list lengths
+"""
+-----------------------------
+Author: Matthew Woolley
+Email: matt.wool@live.com.au
+-----------------------------
+
+Script comparing algorithm runtime over various length lists
+"""
 
 import matplotlib.pyplot as plt
 import random

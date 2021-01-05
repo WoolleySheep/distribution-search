@@ -1,3 +1,12 @@
+"""
+-----------------------------
+Author: Matthew Woolley
+Email: matt.wool@live.com.au
+-----------------------------
+
+Functions for testing whether an object can be searched
+"""
+
 import matplotlib.pyplot as plt
 from scipy.stats import chisquare, kstest
 from tabulate import tabulate

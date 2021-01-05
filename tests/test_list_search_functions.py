@@ -1,3 +1,12 @@
+"""
+-----------------------------
+Author: Matthew Woolley
+Email: matt.wool@live.com.au
+-----------------------------
+
+Unittests for list-searching functions
+"""
+
 import random
 import unittest
 
@@ -21,6 +30,7 @@ SEARCH_FUNCS = [
 
 
 def _run_against_all_search_functions(self, array, element):
+    """Runs the test case against each list-search function, expecting a value"""
     for search_func in SEARCH_FUNCS:
         correct_idx = array.index(element)
         with self.subTest(search_func=search_func):
@@ -31,6 +41,7 @@ def _run_against_all_search_functions(self, array, element):
 
 
 def _raise_value_error_for_all_search_functions(self, array, element):
+    """Runs the test case against each list-search function, expecting an error"""
     for search_func in SEARCH_FUNCS:
         with self.subTest(search_func=search_func):
             args = (array, element)
@@ -41,6 +52,7 @@ def _raise_value_error_for_all_search_functions(self, array, element):
 
 class TestInterpolationSearch(unittest.TestCase):
     def test_randomised_lists(self):
+        """Generate randomised lists to search"""
         random.seed(100)  # Generate the same random numbers every time
         for _ in range(1000):  # Conduct 1000 tests
             len_list = random.randint(1, 100)

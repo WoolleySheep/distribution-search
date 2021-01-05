@@ -1,9 +1,6 @@
 # Search functions
 ## Python implementations of common list-search algorithms
 ### TODO
-* Determine if rounding would be more effective
-* Add docstrings and improve commenting
-* Add signature
 * Convert into a package
 
 ### Algorithms implemented
@@ -19,9 +16,9 @@
   
 ### Repository structure
 * **list_search_functions**: Search algorithm implementation files
-  * *list_search_functions.py*: Search algorithm implementation code
+  * *list_search_functions.py*: A collection of list-searching functions, utilising various algorithms
 * **tests**: Test files
-  * *test__listsearch_functions.py*: Unittests for list_search_functions.py
+  * *test__listsearch_functions.py*: Unittests for list-searching functions
 * **tools**: Files to assist with algorithm analysis and use
   * *check_array_format.py*: Functions for testing whether an object can be searched
   * *compare_runtimes.py*: Script comparing algorithm runtime over various length lists
